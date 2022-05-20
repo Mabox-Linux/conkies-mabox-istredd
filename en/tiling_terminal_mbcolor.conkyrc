@@ -1,0 +1,84 @@
+conky.config = {
+-- WINDOW
+	own_window = true,
+	own_window_type = 'desktop',
+	own_window_transparent = false,
+	own_window_hints = 'undecorated,below,skip_taskbar,skip_pager,sticky',
+	own_window_colour = '#142c2c',
+	own_window_class = 'Conky',
+	own_window_title = 'Mabox Terminator Conky',
+    
+    alignment = 'bottom_right',
+	gap_x = 300,
+	gap_y = 60,
+	minimum_width = '200',
+
+-- FONTS
+	use_xft = true,
+	font = 'Ubuntu:size=9',
+	xftalpha = 1,
+	override_utf8_locale = true,
+
+-- COLORS
+	draw_shades = false,
+	default_shade_color = '#000000',
+	draw_outline = false,
+	default_outline_color = '#222222',
+
+	default_color = '#309552',
+	color0 = '#accdc7',
+
+-- BORDERS
+	draw_borders = true,
+-- Stippled borders?
+	stippled_borders = 3,
+-- border margins
+	border_inner_margin = 8,
+	border_outer_margin = 8,
+-- border width
+	border_width = 1,
+
+-- MISC
+-- Boolean value, if true, Conky will be forked to background when started.
+	background = true,
+
+-- Adds spaces around certain objects to stop them from moving other things
+-- around, this only helps if you are using a mono font
+-- Options: right, left or none
+	use_spacer = 'none',
+
+-- Subtract (file system) buffers from used memory?
+	no_buffers = true,
+
+-- Imlib2 image cache size, in bytes. Default 4MiB Increase this value if you use
+-- $image lots. Set to 0 to disable the image cache.
+	imlib_cache_size = 0,
+
+-- Use the Xdbe extension? (eliminates flicker)
+-- It is highly recommended to use own window with this one
+-- so double buffer won't be so big.
+	double_buffer = true,
+	update_interval = 1,
+};
+
+conky.text = [[
+${color}TILING TERMINAL WORKFLOW
+${color}RUN  ${color0}${hr 1}
+${voffset -2}${color0}terminal  ${alignr}${color}super+t
+${color0}quake-terminal (show/hide) ${alignr}${color}ctrl+~
+${color}SPLIT  ${color0}${hr 1}
+${voffset -2}${color0}horizontally  ${alignr}${color}ctrl+shift+o
+${color0}vertically  ${alignr}${color}ctrl+shift+e
+${color}USEFULL ACTIONS  ${color0}${hr 1}
+${voffset -2}${color0}change focus${alignr}${color}alt+arrows
+${color0}resize active ${alignr}${color}ctrl+shift+arrows
+${color0}zoom active terminal  ${alignr}${color}ctrl+shift+x
+${color0}fullscreen ${alignr}${color}super+enter,F11
+${color0}close terminal ${alignr}${color}ctrl+shift+w
+${color}FONT SIZE  ${color0}${hr 1}${voffset -2}
+${color0}increase ${alignr}${alignr}${color}ctrl++
+${color0}decrease ${alignr}${color}ctrl+-
+${color0}reset ${alignr}${color}ctrl+0
+]];
+
+

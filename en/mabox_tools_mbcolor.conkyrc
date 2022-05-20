@@ -1,0 +1,86 @@
+conky.config = {
+-- WINDOW
+	own_window = true,
+	own_window_type = 'desktop',
+	own_window_transparent = false,
+	own_window_hints = 'undecorated,below,skip_taskbar,skip_pager,sticky',
+	own_window_colour = '#142c2c',
+	own_window_class = 'Conky',
+	own_window_title = 'Mabox Tools Conky',
+    
+    alignment = 'bottom_left',
+	gap_x = 260,
+	gap_y = 60,
+	minimum_width = '200',
+
+-- FONTS
+	use_xft = true,
+	font = 'Ubuntu:size=9',
+	xftalpha = 1,
+	override_utf8_locale = true,
+
+-- COLORS
+	draw_shades = false,
+	default_shade_color = '#000000',
+	draw_outline = false,
+	default_outline_color = '#222222',
+
+	default_color = '#309552',
+	color0 = '#accdc7',
+
+-- BORDERS
+	draw_borders = true,
+-- Stippled borders?
+	stippled_borders = 3,
+-- border margins
+	border_inner_margin = 8,
+	border_outer_margin = 8,
+-- border width
+	border_width = 1,
+
+-- MISC
+-- Boolean value, if true, Conky will be forked to background when started.
+	background = true,
+
+-- Adds spaces around certain objects to stop them from moving other things
+-- around, this only helps if you are using a mono font
+-- Options: right, left or none
+	use_spacer = 'none',
+
+-- Subtract (file system) buffers from used memory?
+	no_buffers = true,
+
+-- Imlib2 image cache size, in bytes. Default 4MiB Increase this value if you use
+-- $image lots. Set to 0 to disable the image cache.
+	imlib_cache_size = 0,
+
+-- Use the Xdbe extension? (eliminates flicker)
+-- It is highly recommended to use own window with this one
+-- so double buffer won't be so big.
+	double_buffer = true,
+	update_interval = 1,
+};
+
+conky.text = [[
+${color}MENUS/SIDEPANELS ${color0} ${hr 1}${voffset -2}
+${color0}Main menu  ${alignr}${color}super / super+spacebar
+${color0}Settings menu ${alignr} ${color}super+s
+${color0}Left ${alignr} ${color}ctrl+super+left
+${color0}Right ${alignr} ${color}ctrl+super+right
+${color0}Places ${alignr} ${color}super+.
+${color}CONFIG MENUS ${color0} ${hr 1}${voffset -2}
+${color0}Tint2 ${alignr}${color}super+alt+p
+${color0}Conky ${alignr}${color}super+alt+k
+${color0}Menu/Panels  ${alignr}${color}super+alt+m
+${color0}Wallpaper ${alignr}${color}super+alt+w
+${color0}ScreenLocker ${alignr}${color}super+alt+l
+${color}Mabox Linux Tools ${color0} ${hr 1}${voffset -2}
+${color0}Command Palette  ${alignr}${color}super+F1
+${color0}Colorizer  ${alignr}${color}super+alt+o
+${color0}Color Menu  ${alignr}${color}super+alt+c
+${color0}Espanso - text expander ${alignr}${color}super+alt+e
+${color0}Exit dialog ${alignr}${color}super+x
+${color0}Screenshot tool ${alignr}${color}super+PrtScr
+]];
+
+
