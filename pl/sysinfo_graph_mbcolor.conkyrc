@@ -1,0 +1,86 @@
+conky.config = {
+
+	own_window = true,
+	own_window_type = 'desktop',
+	own_window_transparent = false,
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	own_window_colour = '#142c2c',
+	own_window_class = 'Conky',
+	own_window_title = 'Mabox Sysinfo Graph Conky',
+    
+    alignment = 'top_right',
+	gap_x = 260,
+	gap_y = 60,
+	minimum_width = '200',
+
+	use_xft = true,
+	font = 'Ubuntu:size=9',
+	xftalpha = 1,
+	override_utf8_locale = true,
+    
+    
+	draw_shades = false,
+	default_shade_color = '#222222',
+	draw_outline = false,
+	default_outline_color = '#222222',
+    
+    default_color = '#309552',
+	color0 = '#accdc7',
+	color1 = '#61c4bc',
+    color2 = '#61c4bc',
+	cpu_avg_samples = 2,
+	
+
+	draw_borders = true,
+	stippled_borders = 3,
+	border_inner_margin = 8,
+	border_outer_margin = 8,
+	border_width = 1,
+    draw_graph_borders = true,
+
+	background = true,
+	no_buffers = true,
+	imlib_cache_size = 0,
+    short_units = true,
+	double_buffer = true,
+	update_interval = 1,
+};
+
+conky.text = [[
+$color${font Cantarell:size=16}${time %A}$font\
+${voffset -20}$alignr$color1${font Cantarell:size=38}${time %e}$font
+$color${voffset -20}$color1${font Cantarell:size=18}${time %b}$font\
+${voffset -3} $color${font Cantarell:size=20} ${time %Y}$font
+${voffset 10}${goto 20}${color} CPU$alignr$cpu% ${voffset -24}
+$color2$alignr${cpugraph 50,190 -l -t}${voffset -6}
+${goto 18}$font$color0${top name 1}${alignr 4}$color${top cpu 1}%
+${goto 18}$color0${top name 2}$alignr$color${top cpu 2}%
+${goto 18}$color0${top name 3}$alignr$color${top cpu 3}%
+${goto 18}$color0${top name 4}$alignr$color${top cpu 4}%
+${goto 18}$color0${top name 5}$alignr$color${top cpu 5}%
+#
+${voffset 10}${goto 20}${color} RAM${alignr 4}$legacymem / $memmax ${voffset -24}
+$color2$alignr${memgraph 50,190 -l -t}${voffset -6}
+${goto 18}$color0${top_mem name 1}$alignr$color${top_mem mem_res 1}
+${goto 18}$color0${top_mem name 2}$alignr$color${top_mem mem_res 2}
+${goto 18}$color0${top_mem name 3}$alignr$color${top_mem mem_res 3}
+${goto 18}$color0${top_mem name 4}$alignr$color${top_mem mem_res 4}
+${goto 18}$color0${top_mem name 5}$alignr$color${top_mem mem_res 5}
+#
+${voffset 10}$alignr dysk ${color0}${fs_used /} - ${fs_size /}
+$alignr$color pamięć ${color0}$legacymem - $memmax
+#${alignr}${color0}${font Cantarell:size=9}swap $swapmax - $swap
+#
+${voffset 10}$alignr${color} Mabox Linux ${execi 10000 awk -F'=' '/DISTRIB_RELEASE=/ {printf $2" "} /CODENAME/ {print $2}' /etc/lsb-release}
+#
+$alignr${execi 10000 whoami}@${nodename}
+${alignr}${color0}uptime ${color}${uptime_short}
+${alignr}${color0}${alignr}jądro ${color}${kernel}
+${alignr}${color0}${alignr}arch ${color}${machine}
+${alignr}${color0}${alignr}system plików ${color}${fs_type}${voffset 10}
+${alignr}${color}${execpi 1800 checkupdates.sh -g}${font}${color}
+#${voffset 10}${alignr}${color} available updates ${color1}${font Cantarell:bold:size=10}${execpi 1800 pamac checkupdates -aq| wc -l}${font}${color}
+${alignr}${color} zainstalowane pakiety: ${color0}${execi 10000 pacman -Q | wc -l}
+${alignr}${color} gałąź: ${color0}${execi 10000 pacman-mirrors -G}
+${voffset -50}
+]];

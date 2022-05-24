@@ -1,0 +1,94 @@
+conky.config = {
+-- WINDOW
+	own_window = true,
+	own_window_type = 'desktop',
+	own_window_transparent = false,
+	own_window_hints = 'undecorated,below,skip_taskbar,skip_pager,sticky',
+	own_window_colour = '#142c2c',
+	own_window_class = 'Conky',
+	own_window_title = 'Mabox Shortcuts Conky',
+    
+    alignment = 'bottom_left',
+	gap_x = 30,
+	gap_y = 60,
+	minimum_width = '200',
+
+-- FONTS
+	use_xft = true,
+	font = 'Ubuntu:size=9',
+	xftalpha = 1,
+	override_utf8_locale = true,
+
+-- COLORS
+	draw_shades = false,
+	default_shade_color = '#000000',
+	draw_outline = false,
+	default_outline_color = '#222222',
+
+	default_color = '#309552',
+	color0 = '#accdc7',
+
+-- BORDERS
+	draw_borders = true,
+-- Stippled borders?
+	stippled_borders = 3,
+-- border margins
+	border_inner_margin = 8,
+	border_outer_margin = 8,
+-- border width
+	border_width = 1,
+
+-- MISC
+-- Boolean value, if true, Conky will be forked to background when started.
+	background = true,
+
+-- Adds spaces around certain objects to stop them from moving other things
+-- around, this only helps if you are using a mono font
+-- Options: right, left or none
+	use_spacer = 'none',
+
+-- Subtract (file system) buffers from used memory?
+	no_buffers = true,
+
+-- Imlib2 image cache size, in bytes. Default 4MiB Increase this value if you use
+-- $image lots. Set to 0 to disable the image cache.
+	imlib_cache_size = 0,
+
+-- Use the Xdbe extension? (eliminates flicker)
+-- It is highly recommended to use own window with this one
+-- so double buffer won't be so big.
+	double_buffer = true,
+	update_interval = 1,
+};
+
+conky.text = [[
+${color}URUCHOM${alignr}${color0}super = windows key${voffset -8}
+${color0}${hr 1}${voffset -4}
+${color0}terminal  ${alignr}${color}super+t
+${color0}quake-terminal  ${alignr}${color}ctrl+~
+${color0}fmenadżer plików  ${alignr}${color}super+f
+${color0}przeglądarka www  ${alignr}${color}super+w
+${color0}edytor tekstu  ${alignr}${color}super+e
+${color0}wyszukiwanie plików  ${alignr}${color}super+/
+${color0}galculator  ${alignr}${color}super+g
+${color0}radio internetowe ${alignr}${color}super+r
+${color0}ustawienia głośności  ${alignr}${color}super+v
+${color0}przełącz Picom  ${alignr}${color}super+p
+${color0}przełącz Conky  ${alignr}${color}super+c
+${color0}blokada ekranu  ${alignr}${color}super+l
+${color0}wyjście  ${alignr}${color}super+x
+${color}OKNA ${color0} ${hr 1}${voffset -2}
+${color0}zamknij ${alignr} ${color}alt+F4
+${color0}minimalizuj ${alignr} ${color}alt+F5
+${color0}maksymalizuj ${alignr} ${color}alt+F6
+${color0}pokaż pulpit ${alignr} ${color}super+d
+${color0}wł/wył dekorcje okien ${alignr} ${color}super+b
+${color0}pełny ekran ${alignr} ${color}F11
+${color}rozmieszczanie okien: 
+${color0} - połowa ekranu ${alignr} ${color}super+arrows
+${color0} - 1/4 ekranu ${alignr} ${color}super+numpad[1..9]
+${color}PULPITY ${color0} ${hr 1}${voffset -2}
+${color0}idź na pulpit ${alignr} ${color}super+[1..4]
+]];
+
+
