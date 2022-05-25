@@ -6,17 +6,16 @@ conky.config = {
 	own_window_hints = 'undecorated,below,skip_taskbar,skip_pager,sticky',
 	own_window_colour = '#142c2c',
 	own_window_class = 'Conky',
-	own_window_title = 'Mabox Logo',
+	own_window_title = 'Mabox Tools Conky',
     
-    alignment = 'middle_middle',
-	gap_x = 0,
-	gap_y = 0,
-    minimum_height = 220, 
-    minimum_width = 220, 
-    	
+    alignment = 'bottom_left',
+	gap_x = 260,
+	gap_y = 60,
+	minimum_width = '200',
+
 -- FONTS
 	use_xft = true,
-	font = 'Ubuntu:size=9',
+	font = 'Ubuntu:size=10',
 	xftalpha = 1,
 	override_utf8_locale = true,
 
@@ -27,10 +26,10 @@ conky.config = {
 	default_outline_color = '#222222',
 
 	default_color = '#309552',
-	color0 = '#fbfdfd',
+	color0 = '#accdc7',
 
 -- BORDERS
-	draw_borders = false,
+	draw_borders = true,
 -- Stippled borders?
 	stippled_borders = 3,
 -- border margins
@@ -53,7 +52,7 @@ conky.config = {
 
 -- Imlib2 image cache size, in bytes. Default 4MiB Increase this value if you use
 -- $image lots. Set to 0 to disable the image cache.
---imlib_cache_size = 0,
+	imlib_cache_size = 0,
 
 -- Use the Xdbe extension? (eliminates flicker)
 -- It is highly recommended to use own window with this one
@@ -63,7 +62,25 @@ conky.config = {
 };
 
 conky.text = [[
-${image $HOME/.config/conky/images/mabox_3d.png -s 220x220}${voffset 220}${color0}${alignc}M A B O X  L I N U X
+${color}MENUS/PANELES LATERALES${color0} ${hr 1}${voffset -2}
+${color0}Menu principal  ${alignr}${color}super / super+barra de espacio
+${color0}Ajustes de menu principal ${alignr} ${color}super+s
+${color0}Lateral izquierdo ${alignr} ${color}ctrl+super+flecha izquierda
+${color0}Lateral derecho ${alignr} ${color}ctrl+super+flecha derecha
+${color0}Lugares ${alignr} ${color}super+.
+${color}AJUSTES de MENUS ${color0} ${hr 1}${voffset -2}
+${color0}Tint2 ${alignr}${color}super+alt+p
+${color0}Conky ${alignr}${color}super+alt+k
+${color0}Menu/Paneles laterales  ${alignr}${color}super+alt+m
+${color0}Fondo de pantalla ${alignr}${color}super+alt+w
+${color0}Bloqueo de pantalla ${alignr}${color}super+alt+l
+${color}HERRAMIENTAS de Mabox Linux ${color0} ${hr 1}${voffset -2}
+${color0}Paleta de Comandos ${alignr}${color}super+F1
+${color0}Colorizador  ${alignr}${color}super+alt+o
+${color0}Menu de Colores  ${alignr}${color}super+alt+c
+${color0}Espanso - expansor de texto ${alignr}${color}super+alt+e
+${color0}Ventana de salida ${alignr}${color}super+x
+${color0}Capturador de pantalla${alignr}${color}super+PrtScr
 ]];
 
 

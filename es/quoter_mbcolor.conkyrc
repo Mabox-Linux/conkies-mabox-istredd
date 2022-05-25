@@ -6,14 +6,13 @@ conky.config = {
 	own_window_hints = 'undecorated,below,skip_taskbar,skip_pager,sticky',
 	own_window_colour = '#142c2c',
 	own_window_class = 'Conky',
-	own_window_title = 'Mabox Logo',
+	own_window_title = 'Mabox Tools Conky',
     
-    alignment = 'middle_middle',
+    alignment = 'bottom_middle',
 	gap_x = 0,
-	gap_y = 0,
-    minimum_height = 220, 
-    minimum_width = 220, 
-    	
+	gap_y = 60,
+	minimum_width = '200',
+
 -- FONTS
 	use_xft = true,
 	font = 'Ubuntu:size=9',
@@ -27,10 +26,10 @@ conky.config = {
 	default_outline_color = '#222222',
 
 	default_color = '#309552',
-	color0 = '#fbfdfd',
+	color0 = '#accdc7',
 
 -- BORDERS
-	draw_borders = false,
+	draw_borders = true,
 -- Stippled borders?
 	stippled_borders = 3,
 -- border margins
@@ -53,7 +52,7 @@ conky.config = {
 
 -- Imlib2 image cache size, in bytes. Default 4MiB Increase this value if you use
 -- $image lots. Set to 0 to disable the image cache.
---imlib_cache_size = 0,
+	imlib_cache_size = 0,
 
 -- Use the Xdbe extension? (eliminates flicker)
 -- It is highly recommended to use own window with this one
@@ -63,7 +62,7 @@ conky.config = {
 };
 
 conky.text = [[
-${image $HOME/.config/conky/images/mabox_3d.png -s 220x220}${voffset 220}${color0}${alignc}M A B O X  L I N U X
+${execpi 1800 quote.sh}
 ]];
 
 

@@ -2,15 +2,15 @@ conky.config = {
 -- WINDOW
 	own_window = true,
 	own_window_type = 'desktop',
-	own_window_transparent = true,
+	own_window_transparent = false,
 	own_window_hints = 'undecorated,below,skip_taskbar,skip_pager,sticky',
 	own_window_colour = '#142c2c',
 	own_window_class = 'Conky',
 	own_window_title = 'Mabox Logo',
     
-    alignment = 'bottom_right',
-	gap_x = 30,
-	gap_y = 60,
+    alignment = 'middle_middle',
+	gap_x = 0,
+	gap_y = 0,
     minimum_height = 220, 
     minimum_width = 220, 
     	
@@ -63,8 +63,7 @@ conky.config = {
 };
 
 conky.text = [[
-${image $HOME/.config/conky/images/mabox_3d.png -s 220x220}
-${voffset 200}${color0}${alignc}M A B O X  L I N U X
+${image $HOME/.config/conky/images/mabox_3d.png -s 220x220}${voffset 220}${color0}${alignc}M A B O X  L I N U X
 ]];
 
 

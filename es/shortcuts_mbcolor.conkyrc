@@ -1,0 +1,94 @@
+conky.config = {
+-- WINDOW
+	own_window = true,
+	own_window_type = 'desktop',
+	own_window_transparent = false,
+	own_window_hints = 'undecorated,below,skip_taskbar,skip_pager,sticky',
+	own_window_colour = '#142c2c',
+	own_window_class = 'Conky',
+	own_window_title = 'Mabox Shortcuts Conky',
+    
+    alignment = 'bottom_left',
+	gap_x = 30,
+	gap_y = 60,
+	minimum_width = '200',
+
+-- FONTS
+	use_xft = true,
+	font = 'Ubuntu:size=10',
+	xftalpha = 1,
+	override_utf8_locale = true,
+
+-- COLORS
+	draw_shades = false,
+	default_shade_color = '#000000',
+	draw_outline = false,
+	default_outline_color = '#222222',
+
+	default_color = '#309552',
+	color0 = '#accdc7',
+
+-- BORDERS
+	draw_borders = true,
+-- Stippled borders?
+	stippled_borders = 3,
+-- border margins
+	border_inner_margin = 8,
+	border_outer_margin = 8,
+-- border width
+	border_width = 1,
+
+-- MISC
+-- Boolean value, if true, Conky will be forked to background when started.
+	background = true,
+
+-- Adds spaces around certain objects to stop them from moving other things
+-- around, this only helps if you are using a mono font
+-- Options: right, left or none
+	use_spacer = 'none',
+
+-- Subtract (file system) buffers from used memory?
+	no_buffers = true,
+
+-- Imlib2 image cache size, in bytes. Default 4MiB Increase this value if you use
+-- $image lots. Set to 0 to disable the image cache.
+	imlib_cache_size = 0,
+
+-- Use the Xdbe extension? (eliminates flicker)
+-- It is highly recommended to use own window with this one
+-- so double buffer won't be so big.
+	double_buffer = true,
+	update_interval = 1,
+};
+
+conky.text = [[
+${color}EJECUTAR${alignr}${color0}super = tecla windows${voffset -8}
+${color0}${hr 1}${voffset -4}
+${color0}terminal  ${alignr}${color}super+t
+${color0}terminal de quake  ${alignr}${color}ctrl+~
+${color0}gestor de archivos  ${alignr}${color}super+f
+${color0}navegador www  ${alignr}${color}super+w
+${color0}editor de texto  ${alignr}${color}super+e
+${color0}buscador de archivos  ${alignr}${color}super+/
+${color0}calculadora  ${alignr}${color}super+g
+${color0}radios en internet  ${alignr}${color}super+r
+${color0}volumen de audio  ${alignr}${color}super+v
+${color0}activar Picom  ${alignr}${color}super+p
+${color0}activar Conky  ${alignr}${color}super+c
+${color0}bloquear pantalla  ${alignr}${color}super+l
+${color0}salir  ${alignr}${color}super+x
+${color}VENTANAS ${color0} ${hr 1}${voffset -2}
+${color0}cerrar ${alignr} ${color}alt+F4
+${color0}iconificar ${alignr} ${color}alt+F5
+${color0}maximizar ${alignr} ${color}alt+F6
+${color0}mostrar el escritorio ${alignr} ${color}super+d
+${color0}des/decorar barra ${alignr} ${color}super+b
+${color0}activar pantalla completa ${alignr} ${color}F11
+${color}posicionar ventanas: 
+${color0} - mitad de pantalla ${alignr} ${color}super+flechas
+${color0} - 1/4 de pantalla ${alignr} ${color}super+teclado numerico[1..9]
+${color}ESCRITORIOS ${color0} ${hr 1}${voffset -2}
+${color0}moverse entre escritorios ${alignr} ${color}super+numeros[1..4]
+]];
+
+
